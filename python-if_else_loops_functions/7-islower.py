@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 def islower(c):
-    return 'a' <= c <= 'z'
+    for d in c:
+        if not ('a' <= c and c <= 'z'):
+            return False
+    return True
