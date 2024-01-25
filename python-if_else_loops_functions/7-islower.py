@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
     islower = False
-    if isinstance(c, str):
+    if isinstance(c, str) && len(c) == 1:
         for d in c:
             if ord(d) >= 65 and ord(d) <= 90:
                 islower = False
