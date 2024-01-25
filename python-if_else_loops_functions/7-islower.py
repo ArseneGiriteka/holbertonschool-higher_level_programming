@@ -2,7 +2,9 @@
 
 def islower(c):
     is_lower = False
-
+    
+    if not isinstance(c, str):
+        return False
     for d in c:
         if 'A' <= d <= 'Z':
             return False
