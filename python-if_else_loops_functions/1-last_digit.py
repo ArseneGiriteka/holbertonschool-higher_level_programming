@@ -7,10 +7,10 @@ if number < 0:
 else:
     positive_number = number
 digit = positive_number % 10
-print("Last digit of {} is {}".format(number, digit), end=" ")
+print("Last digit of {} is {} and is".format(number, digit), end=" ")
 if digit > 5:
-    print("and is greater than 5")
+    print("greater than 5")
 elif digit == 0:
-    print("and is zero")
+    print("0")
 else:
-    print("and is less than 6 and not 0")
+    print("less than 6 and not 0")
