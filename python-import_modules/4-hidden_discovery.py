@@ -12,7 +12,7 @@ def main():
 
     sorted_names = sorted(unsorted_names)
     for item in sorted_names:
-        print(name)
+        print(item)
 
 
 if __name__ == "__main__":
