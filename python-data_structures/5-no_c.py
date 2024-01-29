@@ -2,6 +2,9 @@
 
 
 def no_c(my_string):
+    if not isinstance(my_string, str):
+        return my_string
+
     length = len(my_string)
     index = 0
 
