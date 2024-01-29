@@ -2,16 +2,10 @@
 
 
 def no_c(my_string):
-    if not isinstance(my_string, str):
-        return my_string
+    str_copy = ""
 
-    length = len(my_string)
-    index = 0
+    for character in my_string:
+        if character.lower() != 'c':
+            str_copy += character
 
-    while index < length:
-        if my_string[index] == 'c' or my_string[index] == 'C':
-            my_string = my_string[:index] + my_string[(index + 1):]
-        length -= 1
-        index += 1
-
-    return my_string
+    return str_copy
