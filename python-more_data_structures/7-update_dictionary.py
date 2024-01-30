@@ -1,4 +1,6 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 
 
-def update_dictionary = lambda d, k, v: (d.update({k: v}), d)[1]
+def update_dictionary(a_dictionary, key, value):
+    a_dictionary[key] = value
+    return a_dictionary
