@@ -2,6 +2,5 @@
 
 
 def update_dictionary(a_dictionary, key, value):
-    if isinstance(key, str):
-        a_dictionary.update({"{}".format(key): value})
+    a_dictionary[key] = value
     return a_dictionary
