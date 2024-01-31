@@ -4,6 +4,8 @@
 def weight_average(my_list=[]):
     res = 0
     w_sum = 0
+    if not my_list:
+        return 0
     for item in my_list:
         res += item[0] * item[1]
         w_sum += item[1]
