@@ -2,6 +2,4 @@
 
 
 class Square:
-    """
-    This class will represente the square object
-    """
+    pass
