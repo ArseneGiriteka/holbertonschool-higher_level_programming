@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module is Empty, it does nothing
+"""
+
 
 class Square:
     """
