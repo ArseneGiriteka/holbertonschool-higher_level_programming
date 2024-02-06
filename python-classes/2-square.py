@@ -16,7 +16,7 @@ Todo:
 class Square:
     """
     Note:
-        This class represente a Square object
+        This class represente a Square objects
 
     Attributes:
         size (int) : private instance attribute
