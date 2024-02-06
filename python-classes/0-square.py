@@ -3,7 +3,10 @@
 
 class Square:
     """
-    This called Square class has no attributes no methods and does
-    nothing
+    This class will represente the square object
     """
-    pass
+    def __init__(self):
+        """
+        This a method to initialize the square instance
+        """
+        pass
