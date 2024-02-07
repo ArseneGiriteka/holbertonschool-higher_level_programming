@@ -11,6 +11,8 @@ Todo:
     raise TypeError if size isn't integer
     raise ValueError if size is less that zero
     Create a public method called area(self)
+    Create a public getter of size attribute
+    Greate a public setter of size attribute
 """
 
 
@@ -23,7 +25,9 @@ class Square:
         size (int): private instance attribute
 
     Methods:
-        erea(self): a public instance method
+        area(self): a public instance method
+        size(self): a public instance method
+        size(self, size): a public instance method
 
     Args:
         size (int)
@@ -59,3 +63,37 @@ class Square:
             The Square of self
         """
         return self.__size * self.__size
+
+    @property
+    def size(self):
+        """
+        Note:
+            This is a getter of size attribute
+
+        Args:
+            self(Square): square object
+
+        Return:
+            self.size
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        """
+        Note:
+            This is the setter of self.size
+
+        Args:
+            self(Square): Square object
+            size(int): value to set upon self.size
+
+        Return:
+            Nothing
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
