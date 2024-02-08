@@ -15,19 +15,21 @@ def matrix_divided(matrix, div):
     other_err_1 = "matrix must be a matrix"
     other_err_2 = " (list of lists) of integers/floats"
     other_err = other_err_1 + other_err_2
+
     if not isinstance(matrix, list):
         raise TypeError(other_err)
 
     for _list in matrix:
-        length = len(matrix[0])
         if not isinstance(_list, list):
-            raise TypeError()
-        elif length != len(_list):
+            raise TypeError(other_err)
+        for i in range(len(_list)):
+            if not isinstance(_list[i], (int, float)):
+                raise TypeError(other_err)
+
+    length = len(matrix[0])
+    for _list in matrix:
+        if length != len(_list):
             raise TypeError(size_err)
-        else:
-            for i in _list:
-                if not isinstance(i, (int, float)):
-                    raise TypeError(other_err)
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
