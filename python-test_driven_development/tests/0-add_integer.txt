@@ -11,7 +11,7 @@ This is a comment section
 100
 >>> add_integer(177.678, 2.322)
 179
->>> add_integer(-4, 5.5)
+>>> add_integer(0, 0)
 1
 >>> try:
 ...     add_integer("scholl", "Test")
