@@ -154,12 +154,11 @@ class Square:
             Nothing
         """
         hashtag = "#"
-        underscore = "_"
 
         if self.size == 0:
             print()
         else:
             print("\n" * self.position[1], end="")
             for i in range(0, self.size):
-                print(underscore * self.position[0], end="")
+                print(" " * self.position[0], end="")
                 print(hashtag * self.size)
