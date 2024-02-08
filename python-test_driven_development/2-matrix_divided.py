@@ -12,8 +12,9 @@ def matrix_divided(matrix, div):
     """
     length = 0
     size_err = "Each row of the matrix must have the same size"
-    other_err = "matrix must be a matrix \
-        (list of lists) of integers/floats"
+    other_err_1 = "matrix must be a matrix"
+    other_err_2 = " (list of lists) of integers/floats"
+    other_err = other_err_1 + other_err_2
     if not isinstance(matrix, list):
         raise TypeError(other_err)
 
@@ -30,7 +31,8 @@ def matrix_divided(matrix, div):
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    elif div == 0:
+
+    if div == 0:
         raise ZeroDivisionError("division by zero")
 
     new_matrix = list(
