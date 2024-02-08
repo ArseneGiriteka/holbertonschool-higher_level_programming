@@ -1,7 +1,5 @@
 #doctest_0-add_integer.py
-"""
-This is a comment section
-"""
+
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
@@ -9,10 +7,10 @@ This is a comment section
 -102
 >>> add_integer(2)
 100
->>> add_integer(0, 0)
-0
->>> add_integer(int(inf), int(anf))
-0
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(3.5, 2.5)
+5
 >>> try:
 ...     add_integer(0, "Test")
 ... except Exception as e:
