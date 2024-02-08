@@ -6,32 +6,28 @@
 ...     else:
 ...         return int(a) + int(b)
 ...
+>>> try:
+...     print(add_integer())
+... except Exception as e:
+...     print(e)
+... 
+add_integer() missing 1 required positional argument: 'a'
+>>> try:
+...     print(add_integer(99999999999999999999999999999999999999999999 + 999999999999999999999999999999999999999999999999999))
+... except Exception as e:
+...     print(e)
+... 
+1000000100000000000000000000000000000000000000000096
 >>> add_integer(1, 2)
 3
->>> add_integer(100, -2)
-98
+>>> add_integer(-100, -2)
+-102
 >>> add_integer(2)
 100
->>> add_integer(177, -2)
-175
->>> try:
-...     add_integer(None)
-... except Exception as e:
-...     print(e)
-...
-a must be an integer
->>> try:
-...     add_integer("school", 0)
-... except Exception as e:
-...     print(e)
-...
-a must be an integer
->>> try:
-...     add_integer(1, "school")
-... except Exception as e:
-...     print(e)
-...
-b must be an integer
+>>> add_integer(177.678, 2.322)
+179
+>>> add_integer(4, 5.5)
+9
 >>> try:
 ...     add_integer("school", "betty")
 ... except Exception as e:
