@@ -20,11 +20,11 @@ This is a comment section
 ... 
 b must be an integer
 >>> try:
-...     add_integer((8, 8))
+...     add_integer(9223372036854775807, -9223372036854775807)
 ... except Exception as e:
 ...     print(e)
 ...
-a must be an integer
+0
 >>> try:
 ...     add_integer(None)
 ... except Exception as e:
