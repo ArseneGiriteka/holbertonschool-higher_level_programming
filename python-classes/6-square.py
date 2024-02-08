@@ -133,14 +133,14 @@ class Square:
         Return:
             Nothing
         """
-        if position is None or not isinstance(position, tuple) or\
-                len(position) != 2 or\
-                not isinstance(position[0], int) or\
-                not isinstance(position[1], int) or\
-                position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
+        if position is not None and isinstance(position, tuple) and\
+                len(position) == 2 and\
+                isinstance(position[0], int) and\
+                isinstance(position[1], int) and\
+                position[0] >= 0 and position[1] >= 0:
+            self.__position = position
         else:
-            self.__position = tuple(position)
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
         """
