@@ -9,9 +9,9 @@ This is a comment section
 -102
 >>> add_integer(2)
 100
->>> add_integer(177.678, 2.322)
-179
 >>> add_integer(0, 0)
+179
+>>> add_integer(int(inf), int(nan))
 0
 >>> try:
 ...     add_integer(0, "Test")
