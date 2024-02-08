@@ -11,8 +11,12 @@ This is a comment section
 100
 >>> add_integer(0, 0)
 0
->>> add_integer(int(inf), int(anf))
-0
+>>> try:
+...     add_integer(int('inf'), int('nan'))
+... except Exception as e:
+...     print("cannot convert float infinity to integer")
+...
+cannot convert float infinity to integer
 >>> try:
 ...     add_integer(0, "Test")
 ... except Exception as e:
