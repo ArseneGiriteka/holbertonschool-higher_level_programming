@@ -137,7 +137,7 @@ class Square:
             Nothing
         """
         if position is None or not isinstance(position, tuple) or\
-                not len(position) != 2 or\
+                len(position) != 2 or\
                 not isinstance(position[0], int) or\
                 not isinstance(position[1], int) or\
                 position[0] < 0 or position[1] < 0:
