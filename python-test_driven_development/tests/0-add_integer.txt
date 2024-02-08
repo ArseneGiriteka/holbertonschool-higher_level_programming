@@ -2,7 +2,6 @@
 """
 This is a comment section
 """
->>> import math
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
@@ -12,6 +11,8 @@ This is a comment section
 100
 >>> add_integer(0, 0)
 0
+>>> add_integer(1, 7.5)
+8
 >>> try:
 ...     add_integer(0, "Test")
 ... except Exception as e:
@@ -19,8 +20,8 @@ This is a comment section
 ... 
 b must be an integer
 >>> try:
-...     add_integer(int('inf'), -int('inf'))
-... except Exception:
+...     add_integer(float('inf'), float('nan'))
+... except Exception as e:
 ...     print("cannot convert float infinity to integer")
 ...
 cannot convert float infinity to integer
