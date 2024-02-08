@@ -1,23 +1,6 @@
->>> def add_integer(a, b=98):
-...     if not isinstance(a, (int, float)):
-...         raise TypeError("a must be an integer")
-...     elif not isinstance(b, (int, float)):
-...         raise TypeError("b must be an integer")
-...     else:
-...         return int(a) + int(b)
-...
->>> try:
-...     print(add_integer())
-... except Exception as e:
-...     print(e)
-... 
-add_integer() missing 1 required positional argument: 'a'
->>> try:
-...     print(add_integer(99999999999999999999999999999999999999999999 + 999999999999999999999999999999999999999999999999999))
-... except Exception as e:
-...     print(e)
-... 
-1000000100000000000000000000000000000000000000000096
+#doctest_0-add_integer.py
+
+>>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
 >>> add_integer(-100, -2)
@@ -29,7 +12,19 @@ add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(4, 5.5)
 9
 >>> try:
-...     add_integer("school", "betty")
+...     add_integer(4, "Test")
+... except Exception as e:
+...     print(e)
+... 
+b must be an integer
+>>> try:
+...     add_integer()
+... except Exception as e:
+...     print(e)
+... 
+add_integer() missing 1 required positional argument: 'a'
+>>> try:
+...     add_integer(None)
 ... except Exception as e:
 ...     print(e)
 ...
