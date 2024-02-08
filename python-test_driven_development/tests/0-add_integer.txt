@@ -7,16 +7,16 @@
 -102
 >>> add_integer(2)
 100
->>> add_integer(0, 0)
-0
+>>> add_integer(100.3, -2)
+98
 >>> add_integer(3.5, 2.5)
 5
 >>> try:
-...     add_integer(float('inf'), float('int'))
+...     add_integer()
 ... except Exception:
-...     print("cannot convert float infinity to integer")
-...
-cannot convert float infinity to integer
+...     print("Error")
+... 
+Error
 >>> try:
 ...     add_integer(0, "Test")
 ... except Exception as e:
