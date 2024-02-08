@@ -2,14 +2,14 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
->>> add_integer(-100, 2)
--98
+>>> add_integer(-100, -2)
+-102
 >>> add_integer(2)
 100
 >>> add_integer(177.678, 2.322)
 179
->>> add_integer(4, 5.5)
-9
+>>> add_integer(-4, 5.5)
+1
 >>> try:
 ...     add_integer("scholl", "Test")
 ... except Exception as e:
