@@ -14,6 +14,9 @@ Todo:
     Create a public getter of size attribute
     Greate a public setter of size attribute
     Create a public instance method my_print(self)
+    Create a private instance attribute __position
+    Create a public instance setter method position(self, pos)
+    Create a public instance getter method position(self)
 """
 
 
@@ -24,15 +27,20 @@ class Square:
 
     Attributes:
         size (int): private instance attribute
+        position(int, int): private instance attribute
 
     Methods:
         area(self): a public instance method
         size(self): a public instance method
         size(self, size): a public instance method
+        position(self): a public instance method
+        position(self, position): a public instance method
         my_print(self): public instance method
 
     Args:
+        self(Square)
         size (int)
+        position(int, int)
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -40,10 +48,12 @@ class Square:
             This methode initialize a square object
             It raises TypeError if size is not integer
             It raises ValueError if size < 0
+            It initialize the __position attribute
 
         Args:
             self (Square): private square instance object
             size (int): square object one side size
+            position(int, int): 2 elements tuple
         """
         self.size = size
         self.position = position
