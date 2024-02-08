@@ -12,6 +12,12 @@
 >>> add_integer(3.5, 2.5)
 5
 >>> try:
+...     add_integer(float('inf'), float('int'))
+... except Exception:
+...     print("cannot convert float infinity to integer")
+...
+cannot convert float infinity to integer
+>>> try:
 ...     add_integer(0, "Test")
 ... except Exception as e:
 ...     print(e)
