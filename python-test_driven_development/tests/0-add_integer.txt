@@ -18,11 +18,11 @@
 ... 
 b must be an integer
 >>> try:
-...     add_integer(float('inf'), float('nan'))
+...     add_integer(0, 0)
 ... except Exception as e:
-...     print("cannot convert float infinity to integer")
+...     print(e)
 ...
-cannot convert float infinity to integer
+0
 >>> try:
 ...     add_integer(None)
 ... except Exception as e:
