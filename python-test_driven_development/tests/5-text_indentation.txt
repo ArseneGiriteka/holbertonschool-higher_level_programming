@@ -1,0 +1,88 @@
+#doctest_5-text_indentation.py
+
+>>> __import__('5-text_indentation').text_indentation("hi.arsene")
+hi.
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi?arsene")
+hi?
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi:arsene")
+hi:
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation(".hi arsene")
+.
+<BLANKLINE>
+hi arsene
+>>> __import__('5-text_indentation').text_indentation("?hi arsene")
+?
+<BLANKLINE>
+hi arsene
+>>> __import__('5-text_indentation').text_indentation("hi arsene.")
+hi arsene.
+<BLANKLINE>
+>>> __import__('5-text_indentation').text_indentation("hi arsene?")
+hi arsene?
+<BLANKLINE>
+>>> __import__('5-text_indentation').text_indentation("hi arsene:")
+hi arsene:
+<BLANKLINE>
+>>> __import__('5-text_indentation').text_indentation("")
+>>> __import__('5-text_indentation').text_indentation("hi.?:arsene")
+hi.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> try:
+...     __import__('5-text_indentation').text_indentation(789)
+... except Exception as e:
+...     print(e)
+... 
+text must be a string
+>>> __import__('5-text_indentation').text_indentation("hi?     arsene")
+hi?
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi.   arsene")
+hi.
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi:	arsene")
+hi:
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi?arsene   ")
+hi?
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi.arsene	")
+hi.
+<BLANKLINE>
+arsene
+>>> __import__('5-text_indentation').text_indentation("hi:arsene			")
+hi:
+<BLANKLINE>
+arsene
+>>> try:
+...     __import__('5-text_indentation').text_indentation()
+... except Exception as e:
+...     print("Missing argument")
+...
+Missing argument
+>>> __import__('5-text_indentation').text_indentation("")
+>>> __import__('5-text_indentation').text_indentation("hi    ?hola")
+hi    ?
+<BLANKLINE>
+hola
