@@ -48,3 +48,15 @@ div must be a number
 ...     print(e)
 ... 
 [[-0.49, -2.44, -2.93]]
+>>> try:
+...     __import__('2-matrix_divided').matrix_divided([[__import__('math').inf]], 2)
+... except Exception as e:
+...     print(e)
+... 
+[[inf]]
+>>> try:
+...     __import__('2-matrix_divided').matrix_divided([[1, 2]], __import__('math').inf)
+... except Exception as e:
+...     print(e)
+... 
+[[0.0, 0.0]]
