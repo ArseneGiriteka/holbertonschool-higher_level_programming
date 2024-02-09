@@ -1,68 +1,98 @@
 #doctest_0-add_integer.py
-
-#importing the add_function
 >>> add_integer = __import__('0-add_integer').add_integer
-
-#adding two positive integers
 >>> add_integer(1, 2)
 3
->>> add_integer(-100, 2)
--98
+>>> add_integer(0, 0)
+0
+>>> add_integer(2, 2)
+4
 >>> add_integer(2)
 100
+>>> add_integer(0)
+98
+>>> add_integer(-8, -8)
+-16
+>>> add_integer(-8, -12)
+-20
+>>> add_integer(-1, 8)
+7
+>>> add_integer(-8)
+90
 >>> try:
-...     add_integer(float('inf'))
+...     add_integer(__import__('math').inf, __import__('math').inf)
 ... except Exception:
-...     print("Error")
+...     print("Can't cast inf into int")
 ... 
-Error
->>> add_integer(3.5, 2.5)
-5
+Can't cast inf into int
 >>> try:
-...     add_integer()
+...     add_integer(__import__('math').inf)
 ... except Exception:
-...     print("Error")
+...     print("Can't cast inf into int")
 ... 
-Error
+Can't cast inf into int
 >>> try:
-...     add_integer(0, "Test")
+...     add_integer("school", 8)
+... except Exception as e:
+...     print(e)
+... 
+a must be an integer
+>>> try:
+...     add_integer("school", -8)
+... except Exception as e:
+...     print(e)
+... 
+a must be an integer
+>>> try:
+...     add_integer("school", 0)
+... except Exception as e:
+...     print(e)
+... 
+a must be an integer
+>>> try:
+...     add_integer(8, "school")
 ... except Exception as e:
 ...     print(e)
 ... 
 b must be an integer
 >>> try:
-...     add_integer(None)
+...     add_integer(-8, "school")
+... except Exception as e:
+...     print(e)
+... 
+b must be an integer
+>>> try:
+...     add_integer(0, "school")
+... except Exception as e:
+...     print(e)
+... 
+b must be an integer
+>>> try:
+...     add_integer("holbie", "school")
 ... except Exception as e:
 ...     print(e)
 ... 
 a must be an integer
 >>> try:
-...     add_integer(-8, -8)
-... except Exception as e:
-...     print(e)
-... 
--16
->>> try:
-...     add_integer(__import__('math').inf, -8)
-... except Exception as e:
-...     print(e)
-... 
-cannot convert float infinity to integer
->>> add_integer(0, 0)
-0
->>> add_integer(8, -8.5)
-0
->>> add_integer(-8.5, -8.5)
--16
->>> add_integer(2.5)
-100
->>> add_integer(-2.5)
-96
->>> add_integer(0)
-98
->>> try:
-...     add_integer("school", "is sunny")
+...     add_integer("school", "school")
 ... except Exception as e:
 ...     print(e)
 ... 
 a must be an integer
+>>> try:
+...     add_integer("school")
+... except Exception as e:
+...     print(e)
+... 
+a must be an integer
+>>> try:
+...     add_integer("")
+... except Exception as e:
+...     print(e)
+... 
+a must be an integer
+>>> try:
+...     add_integer()
+... except Exception as e:
+...     print("Missing argument")
+... 
+Missing argument
