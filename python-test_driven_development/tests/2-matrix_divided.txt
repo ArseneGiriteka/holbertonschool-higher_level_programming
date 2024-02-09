@@ -4,11 +4,7 @@ These are tests
 """
 >>> __import__('2-matrix_divided').matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
->>> try:
-...     __import__('2-matrix_divided').matrix_divided([[0, 0, 0]], 3)
-... except Exception as e:
-...     print(e)
-... 
+>>> __import__('2-matrix_divided').matrix_divided([[0, 0, 0]], 3)
 [[0.0, 0.0, 0.0]]
 >>> try:
 ...     __import__('2-matrix_divided').matrix_divided([["4", 5], "", None], 2)
