@@ -51,11 +51,11 @@ b must be an integer
 ... 
 a must be an integer
 >>> try:
-...     add_integer(-8, -8, 8)
+...     add_integer(-8, -8)
 ... except Exception as e:
 ...     print(e)
 ... 
-add_integer() takes from 1 to 2 positional arguments but 3 were given
+-16
 >>> try:
 ...     add_integer(__import__('math').inf, -8)
 ... except Exception as e:
@@ -63,4 +63,6 @@ add_integer() takes from 1 to 2 positional arguments but 3 were given
 ... 
 cannot convert float infinity to integer
 >>> add_integer(0, 0)
+0
+>>> add_integer(8, -8.5)
 0
