@@ -1,14 +1,23 @@
 #!/usr/bin/python3
 """
+Notes:
+    This is the new module
 
-This is the new module
-
+functions:
+    matrix_divided(matrinx, div)
 """
 
 
 def matrix_divided(matrix, div):
     """
-    This the new funcction
+    Notes:
+        This the new funcction
+
+    Args:
+        matrix[[]]: list of list of integer/float
+
+    Return:
+        Return: [[]] of integer/float
     """
     length = 0
     size_err = "Each row of the matrix must have the same size"
