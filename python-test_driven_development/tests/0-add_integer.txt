@@ -62,3 +62,5 @@ add_integer() takes from 1 to 2 positional arguments but 3 were given
 ...     print(e)
 ... 
 cannot convert float infinity to integer
+>>> add_integer(0, 0)
+0
