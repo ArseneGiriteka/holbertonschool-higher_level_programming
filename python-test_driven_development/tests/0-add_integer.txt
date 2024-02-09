@@ -66,3 +66,5 @@ cannot convert float infinity to integer
 0
 >>> add_integer(8, -8.5)
 0
+>>> add_integer(-8.5, -8.5)
+-16
