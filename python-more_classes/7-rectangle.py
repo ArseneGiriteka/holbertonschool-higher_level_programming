@@ -64,13 +64,10 @@ class Rectangle:
 
     def __str__(self):
         """return string"""
-        string = ""
         if self.__height == 0 or self.__width == 0:
-            return string
-        for i in range(0, self.__height - 1):
-            string += Rectangle.print_symbol * self.__width + '\n'
-        string += Rectangle.print_symbol * self.__width
-        return string
+            return ""
+
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """__repr__ function"""
