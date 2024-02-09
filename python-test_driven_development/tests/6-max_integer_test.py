@@ -9,6 +9,9 @@ class TestMaxInteger(unittest.TestCase):
     docstring for ClassName
     """
     def assertEqual(self):
+        """
+        this is a method
+        """
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([0, 2, 4, 3]), 4)
         self.assertEqual(max_integer([0, 0, 0, 0]), 0)
