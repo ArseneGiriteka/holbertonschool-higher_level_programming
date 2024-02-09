@@ -24,3 +24,9 @@ Each row of the matrix must have the same size
 ...     print(e)
 ... 
 division by zero
+>>> try:
+...     __import__('2-matrix_divided').matrix_divided([[1, 5, 6]], "school")
+... except Exception as e:
+...     print(e)
+... 
+div must be a number
