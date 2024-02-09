@@ -66,3 +66,9 @@ div must be a number
 ...     print(e)
 ... 
 [[nan]]
+>>> try:
+...     __import__('2-matrix_divided').matrix_divided()
+... except Exception as e:
+...     print(e)
+... 
+matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
