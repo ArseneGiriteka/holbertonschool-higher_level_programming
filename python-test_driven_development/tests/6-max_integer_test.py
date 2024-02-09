@@ -35,6 +35,18 @@ class TestMaxInteger(unittest.TestCase):
         """Test max_integer with a list containing duplicate maximum values"""
         self.assertEqual(max_integer([1, 2, 3, 4, 4]), 4)
 
+    def test_float_positives(self):
+        self.assertEqual(max_integer([1.5, 5.2, 6.8]), 6.8)
+
+    def test_negative_floats(self):
+        self.assertEqual(max_integer([-1.5, -5.2, -6.8]), -1.5)
+
+    def test_mixed_signed_float(self):
+        self.assertEqual(max_integer([-1.5, 5.2, -6.8]), 5.2)
+
+    def test_mixed_numbers_float_integer(self):
+        self.assertEqual(max_integer([1.5, -5, -100, 150, 205.55]), 205.55)
+
 
 if __name__ == '__main__':
     unittest.main()
