@@ -96,3 +96,7 @@ a must be an integer
 ...     print("Missing argument")
 ... 
 Missing argument
+>>> add_integer(__import__('sys').maxsize, 0)
+9223372036854775807
+>>> add_integer(-(__import__('sys').maxsize - 1), 0)
+-9223372036854775806
