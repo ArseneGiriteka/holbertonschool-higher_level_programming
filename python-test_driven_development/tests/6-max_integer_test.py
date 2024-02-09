@@ -6,30 +6,35 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """
-    docstring for ClassName
-    """
-    def assertEqual(self):
-        """
-        this is a method
-        """
+    def test_regular_list(self):
+        """Test max_integer with a regular list"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
-        self.assertEqual(max_integer([0, 2, 4, 3]), 4)
-        self.assertEqual(max_integer([0, 0, 0, 0]), 0)
-        self.assertEqual(max_integer([5, 5, 5, 5]), 0)
-        self.assertEqual(max_integer([4]), 4)
-        self.assertEqual(max_integer([0]), 0)
-        with self.assertRaise(TypeError):
-            max_integer()
-        with self.assertRaise(TypeError):
-            max_integer(["school", 5, 5, 5])
+
+    def test_reverse_sorted_list(self):
+        """Test max_integer with a reverse sorted list"""
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
+
+    def test_empty_list(self):
+        """Test max_integer with an empty list"""
+        self.assertIsNone(max_integer([]))
+
+    def test_negative_numbers(self):
+        """Test max_integer with a list containing negative numbers"""
         self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
-        self.assertEqual(max_integer([1, -2, 3, -4]), 3)
-        self.assertEqual(max_integer([5.5, 56.87, 100.2, 87.3]), 100.2)
-        self.assertEqual(max_integer([-5.5, -2.5, -3.8, -4.5]), -2.5)
-        self.assertEqual(max_integer([5.5, 2, 3, 4]), 5.5)
-        self.assertEqual(max_integer([5.58, -2, 3, -4]), 5.58)
+
+    def test_mixed_numbers(self):
+        """Test max_integer with a list containing mixed positive
+        and negative numbers"""
+        self.assertEqual(max_integer([-1, 2, -3, 4]), 4)
+
+    def test_single_element_list(self):
+        """Test max_integer with a list containing a single element"""
+        self.assertEqual(max_integer([4]), 4)
+
+    def test_duplicate_max_values(self):
+        """Test max_integer with a list containing duplicate maximum values"""
+        self.assertEqual(max_integer([1, 2, 3, 4, 4]), 4)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
