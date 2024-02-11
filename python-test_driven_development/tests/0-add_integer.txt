@@ -26,6 +26,8 @@
 1
 >>> add_integer(1, 8.5)
 9
+>>> add_integer(8.555)
+106
 >>> add_integer(0, 8.5)
 8
 >>> try:
