@@ -1,4 +1,3 @@
-#doctest_0-add_integer.py
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
@@ -112,3 +111,15 @@ add_integer() missing 1 required positional argument: 'a'
 9223372036854775807
 >>> add_integer(-(__import__('sys').maxsize - 1), 0)
 -9223372036854775806
+>>> try:
+...     add_integer(float('inf'), float('inf'))
+... except Exception:
+...     print("Can't cast inf into int")
+... 
+Can't cast inf into int
+>>> try:
+...     add_integer(float('inf'))
+... except Exception:
+...     print("Can't cast inf into int")
+... 
+Can't cast inf into int
