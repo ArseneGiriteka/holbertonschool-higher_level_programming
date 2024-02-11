@@ -18,6 +18,16 @@
 7
 >>> add_integer(-8)
 90
+>>> add_integer(8.5, 7.5)
+15
+>>> add_integer(-8.5, -7.5)
+-15
+>>> add_integer(8.5, -7.5)
+1
+>>> add_integer(1, 8.5)
+9
+>>> add_integer(0, 8.5)
+8
 >>> try:
 ...     add_integer(__import__('math').inf, __import__('math').inf)
 ... except Exception:
@@ -93,9 +103,9 @@ a must be an integer
 >>> try:
 ...     add_integer()
 ... except Exception as e:
-...     print("Missing argument")
+...     print(e)
 ... 
-Missing argument
+add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(__import__('sys').maxsize, 0)
 9223372036854775807
 >>> add_integer(-(__import__('sys').maxsize - 1), 0)
