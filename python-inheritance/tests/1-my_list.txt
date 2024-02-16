@@ -1,0 +1,21 @@
+#doctest_1-my_list.py
+
+>>> MyList = __import__('1-my_list').MyList
+>>> _list = MyList()
+>>> _list
+[]
+>>> _list.append(8)
+>>> _list
+[8]
+>>> _list = MyList()
+>>> _list.append(0)
+>>> _list
+[0]
+>>> _list = MyList()
+>>> _list.append(-8)
+>>> _list
+[-8]
+>>> _list.append(0)
+>>> _list.append(8)
+>>> _list
+[-8, 0, 8]
