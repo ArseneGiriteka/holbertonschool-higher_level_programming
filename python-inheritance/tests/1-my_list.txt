@@ -15,7 +15,8 @@
 >>> _list.append(-8)
 >>> _list
 [-8]
->>> _list.append(0)
 >>> _list.append(8)
+[-8, 8]
+>>> _list.append(0)
 >>> _list
-[-8, 0, 8]
+[-8, 8, 0]
