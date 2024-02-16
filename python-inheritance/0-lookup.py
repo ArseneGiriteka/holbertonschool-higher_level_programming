@@ -3,4 +3,7 @@
 
 
 def lookup(obj):
+    """
+    This is a method
+    """
     return list(dir(obj))
