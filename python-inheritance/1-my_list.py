@@ -26,4 +26,5 @@ class MyList(list):
 
         Return: Nothing
         """
-        print(sorted(self))
+        sorted_list = sorted(self)
+        print(sorted_list)
