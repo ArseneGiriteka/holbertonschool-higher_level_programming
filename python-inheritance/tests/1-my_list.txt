@@ -1,5 +1,7 @@
 #doctest_1-my_list.py
-
+"""
+Tests of 1-my_list
+"""
 >>> MyList = __import__('1-my_list').MyList
 >>> _list = MyList()
 >>> _list
@@ -21,3 +23,27 @@
 >>> _list.append(0)
 >>> _list
 [-8, 8, 0]
+>>> _list = MyList()
+>>> _list.append(-8)
+>>> _list.append(-7)
+>>> _list
+[-8, -7]
+>>> _list = MyList()
+>>> _list.append(8)
+>>> _list.append(7)
+>>> _list
+[8, 7]
+>>> _list = MyList()
+>>> _list.append(8)
+>>> _list.append(-7)
+>>> _list
+[8, -7]
+>>> _list.append(0)
+>>> _list
+[8, -7, 0]
+>>> _list = MyList()
+>>> _list.append(0)
+>>> _list.append(0)
+>>> _list.append(0)
+>>> _list
+[0, 0, 0]
