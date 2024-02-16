@@ -26,5 +26,4 @@ class MyList(list):
 
         Return: Nothing
         """
-        if isinstance(self, list):
-            print(sorted(self))
+        print(sorted(self))
