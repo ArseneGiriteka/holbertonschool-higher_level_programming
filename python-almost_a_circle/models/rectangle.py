@@ -2,6 +2,7 @@
 """
 new module
 """
+import Base
 
 
 class Rectangle(Base):

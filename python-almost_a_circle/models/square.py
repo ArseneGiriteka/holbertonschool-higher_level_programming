@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """this is a new module"""
+import Rectangle
 import json
 
 
@@ -11,7 +12,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-    	"""This is a method"""
+        """This is a method"""
         return self.width
 
     @size.setter
