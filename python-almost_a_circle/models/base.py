@@ -60,7 +60,7 @@ class Base:
         try:
             with open(filename, mode='r', encoding='utf-8') as file:
                 json_str = file.read()
-                obj_list = cls.fromjsonstring(json_str)
+                obj_list = cls.from_json_string(json_str)
                 return [cls.create(obj_dict) for obj_dict in obj_list]
         except FileNotFoundError:
             return []
