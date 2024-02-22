@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """this is a new module"""
-import Rectangle
+from rectangle import Rectangle
 import json
 
 
