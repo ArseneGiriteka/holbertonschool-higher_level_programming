@@ -70,7 +70,7 @@ class Rectangle(Base):
         self.__x = x
 
     @y.setter
-    def x(self, y):
+    def y(self, y):
         """y setter"""
         if not isinstance(y, int):
             raise TypeError("y must be an Integer")
