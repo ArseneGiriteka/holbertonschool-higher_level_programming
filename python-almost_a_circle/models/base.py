@@ -36,7 +36,7 @@ class Base:
             file.write(json_string)
 
     @staticmethod
-    def fromjsonstring(jsonstring):
+    def from_json_string(jsonstring):
         """Return list of instances from JSON string representation."""
         if jsonstring is None or jsonstring == "":
             return []
@@ -54,7 +54,7 @@ class Base:
         return new_obj
 
     @classmethod
-    def loadfromfile(cls):
+    def load_from_file(cls):
         """Return list of instances."""
         filename = cls.__name__ + ".json"
         try:
