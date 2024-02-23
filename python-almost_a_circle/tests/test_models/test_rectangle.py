@@ -193,6 +193,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rects[0].x, 0)
         self.assertEqual(rects[0].y, 0)
 
+    def test_save_to_file_none(self):
+        """Test Rectangle.save_to_file(None) in Rectangle exists."""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
     @classmethod
     def tearDownClass(cls):
         try:
