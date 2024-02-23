@@ -3,6 +3,7 @@
 
 
 import unittest
+import io
 from models.rectangle import Rectangle
 
 
