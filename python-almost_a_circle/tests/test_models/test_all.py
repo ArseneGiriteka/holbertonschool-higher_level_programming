@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""New module"""
+
+
 import unittest
 import json
 from models.base import Base

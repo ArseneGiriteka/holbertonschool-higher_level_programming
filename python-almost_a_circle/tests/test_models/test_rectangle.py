@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""New module"""
+
+
 import unittest
 from models.rectangle import Rectangle
 
@@ -46,7 +50,9 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary_exists(self):
         """Test to_dictionary() in Rectangle exists."""
         r = Rectangle(5, 2, 3, 4, 45)
-        self.assertEqual(r.to_dictionary(), {'id': 45, 'x': 3, 'y': 4, 'width': 5, 'height': 2})
+        self.assertEqual(
+                    r.to_dictionary(),
+                    {'id': 45, 'x': 3, 'y': 4, 'width': 5, 'height': 2})
 
 
 if __name__ == "__main__":

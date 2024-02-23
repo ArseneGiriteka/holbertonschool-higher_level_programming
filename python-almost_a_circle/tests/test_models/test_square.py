@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""New module"""
+
+
 import unittest
 import os
 from models.square import Square
@@ -47,7 +51,8 @@ class TestSquare(unittest.TestCase):
     def test_to_dictionary_exists(self):
         """Test to_dictionary() in Square exists."""
         s = Square(5, 2, 3, 4)
-        self.assertEqual(s.to_dictionary(), {'id': 4, 'size': 5, 'x': 2, 'y': 3})
+        self.assertEqual(
+                    s.to_dictionary(), {'id': 4, 'size': 5, 'x': 2, 'y': 3})
 
 
 if __name__ == "__main__":

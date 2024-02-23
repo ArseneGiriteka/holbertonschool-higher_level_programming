@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """New module"""
 
 
@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 import os
 
+
 class TestBase(unittest.TestCase):
     """Test cases for Base class methods"""
 
@@ -16,20 +17,23 @@ class TestBase(unittest.TestCase):
         Base._Base__nb_objects = 0
 
     def test_auto_id_assignment_exists(self):
-        """Test of Base() for assigning automatically an ID exists."""
+        """Test of Base() for assigning automatically
+        an ID exists."""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
 
     def test_auto_id_increment_exists(self):
-        """Test of Base() for assigning automatically an ID + 1 of the previous exists."""
+        """Test of Base() for assigning automatically
+        an ID + 1 of the previous exists."""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_auto_assign_id_plus_one_exists(self):
-        """Test Base() for assigning automatically an ID + 1 of the previous exists."""
+        """Test Base() for assigning automatically
+        an ID + 1 of the previous exists."""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b2.id, 2)
@@ -49,11 +53,13 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_string_with_dict_exists(self):
         """Test Base.to_json_string([ { 'id': 12 }]) exists."""
-        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
+        self.assertEqual(
+                    Base.to_json_string([{'id': 12}]), '[{"id": 12}]')
 
     def test_to_json_string_returns_string_exists(self):
-        """Test Base.to_json_string([ { 'id': 12 }]) returning a string exists."""
-        self.assertIsInstance(Base.to_json_string([ { 'id': 12 }]), str)
+        """Test Base.to_json_string([ { 'id': 12 }]) returning a string
+        exists."""
+        self.assertIsInstance(Base.to_json_string([{'id': 12}]), str)
 
     def test_from_json_string_none_exists(self):
         """Test Base.from_json_string(None) exists."""
@@ -65,11 +71,14 @@ class TestBase(unittest.TestCase):
 
     def test_from_json_string_with_dict_exists(self):
         """Test Base.from_json_string('[{ "id": 89 }]') exists."""
-        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
+        self.assertEqual(
+                    Base.from_json_string('[{ "id": 89 }]'), [{'id': 89}])
 
     def test_from_json_string_returns_list_exists(self):
-        """Test Base.from_json_string('[{ "id": 89 }]') returning a list exists."""
-        self.assertIsInstance(Base.from_json_string('[{ "id": 89 }]'), list)
+        """Test Base.from_json_string('[{ "id": 89 }]') returning a
+        list exists."""
+        self.assertIsInstance(
+                    Base.from_json_string('[{ "id": 89 }]'), list)
 
     def tearDown(self):
         """Tear down after testing."""
@@ -77,6 +86,7 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         except FileNotFoundError:
             pass
+
 
 if __name__ == "__main__":
     unittest.main()
