@@ -1,3 +1,7 @@
+#/usr/bin/python3
+"""New module"""
+
+
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
