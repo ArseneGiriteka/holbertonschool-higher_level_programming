@@ -20,7 +20,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 2)
 
     def test_auto_id_plus_one_assignment_exists(self):
-        """Test of Base() for assigning automatically an ID + 1 of the previous exists."""
+        """Test of Base() for assigning automatically an
+        ID + 1 of the previous exists."""
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -44,7 +45,8 @@ class TestBase(unittest.TestCase):
         self.assertTrue(hasattr(Base, 'to_json_string'))
 
     def test_to_json_string_returns_string_exists(self):
-        """Test of Base.to_json_string([ { 'id': 12 }]) returning a string exists."""
+        """Test of Base.to_json_string
+        ([ { 'id': 12 }]) returning a string exists."""
         result = Base.to_json_string([{'id': 12}])
         self.assertIsInstance(result, str)
 
@@ -61,7 +63,8 @@ class TestBase(unittest.TestCase):
         self.assertTrue(hasattr(Base, 'from_json_string'))
 
     def test_from_json_string_returns_list_exists(self):
-        """Test of Base.from_json_string('[{ "id": 89 }]') returning a list exists."""
+        """Test of Base.from_json_string('[{ "id": 89 }]')
+        returning a list exists."""
         result = Base.from_json_string('[{"id": 89}]')
         self.assertIsInstance(result, list)
 
@@ -75,6 +78,7 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(r, Rectangle)
 
     # Add more tests for Rectangle class...
+
 
 class TestSquare(unittest.TestCase):
     """Test cases for Square class."""
