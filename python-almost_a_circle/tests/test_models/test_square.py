@@ -180,11 +180,12 @@ class TestSquare(unittest.TestCase):
         square = Square(1, 2, 3)
         self.assertIsInstance(square, Square)
 
-    def test_square_save_to_file_none_exists(self):
+    def test_square_save_to_file_none(self):
         """Test Square.save_to_file(None) exists."""
-        self.assertTrue(hasattr(Square, 'save_to_file'))
-        square = Square.save_to_file
-        self.assertTrue(callable(square))
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
 
 if __name__ == "__main__":
