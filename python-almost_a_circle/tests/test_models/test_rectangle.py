@@ -161,13 +161,8 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(file.read(), "[]")
 
     def test_rectangle_save_to_file_none(self):
-        # Save None to file
         Rectangle.save_to_file(None)
-        
-        # Check if the file exists
         self.assertTrue(os.path.exists("Rectangle.json"))
-
-        # Check if the file content is empty
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
