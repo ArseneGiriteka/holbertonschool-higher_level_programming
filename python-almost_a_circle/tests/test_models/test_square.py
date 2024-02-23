@@ -170,6 +170,22 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(squares[0].x, 0)
         self.assertEqual(squares[0].y, 0)
 
+    def test_square_constructor_exists(self):
+        """Test Square(1, 2) exists."""
+        square = Square(1, 2)
+        self.assertIsInstance(square, Square)
+
+    def test_square_constructor_with_x_and_y_exists(self):
+        """Test Square(1, 2, 3) exists."""
+        square = Square(1, 2, 3)
+        self.assertIsInstance(square, Square)
+
+    def test_square_save_to_file_none_exists(self):
+        """Test Square.save_to_file(None) exists."""
+        self.assertTrue(hasattr(Square, 'save_to_file'))
+        square = Square.save_to_file
+        self.assertTrue(callable(square))
+
 
 if __name__ == "__main__":
     unittest.main()
