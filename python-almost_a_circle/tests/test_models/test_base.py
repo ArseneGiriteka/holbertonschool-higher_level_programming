@@ -11,10 +11,18 @@ class TestBase(unittest.TestCase):
         """Set up for testing."""
         Base._Base__nb_objects = 0
 
-    def test_auto_assign_id_exists(self):
-        """Test Base() for assigning automatically an ID exists."""
-        b = Base()
-        self.assertEqual(b.id, 1)
+    def test_auto_id_assignment_exists(self):
+        """Test of Base() for assigning automatically an ID exists."""
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+
+    def test_auto_id_increment_exists(self):
+        """Test of Base() for assigning automatically an ID + 1 of the previous exists."""
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
 
     def test_auto_assign_id_plus_one_exists(self):
         """Test Base() for assigning automatically an ID + 1 of the previous exists."""
