@@ -50,7 +50,10 @@ class Base:
             dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy_instance = cls(1)
-        dummy_instance.update(**dictionary)
+        try:
+            dummy_instance.update(**dictionary)
+        except (TypeError, ValueError) as e:
+            pass
         return dummy_instance
 
     @classmethod
@@ -61,6 +64,17 @@ class Base:
             with open(filename, mode='r', encoding='utf-8') as file:
                 json_str = file.read()
                 dict_list = cls.from_json_string(json_str)
-                return [cls.create(**dict_obj) for dict_obj in dict_list]
+                if not dict_list:
+                    return []
+                instances = []
+                for dict_obj in dict_list:
+                    try:
+                        instance = cls.create(**dict_obj)
+                        instances.append(instance)
+                    except (TypeError, ValueError) as e:
+                        print(f"Error creating instance: {e}")
+                return instances
         except FileNotFoundError:
+            return []
+        except (IOError, json.JSONDecodeError) as e:
             return []

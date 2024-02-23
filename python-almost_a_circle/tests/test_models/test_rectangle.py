@@ -4,6 +4,7 @@
 
 import unittest
 import io
+import os
 from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 
@@ -120,6 +121,74 @@ class TestRectangle(unittest.TestCase):
             rect.display()
             self.assertEqual(buf.getvalue(), expected_output)
 
+    def test_rectangle_create_with_id(self):
+        # Test Rectangle.create() with id
+        rect = Rectangle.create(**{'id': 89})
+        self.assertEqual(rect.id, 89)
+
+    def test_rectangle_create_with_id_and_width(self):
+        # Test Rectangle.create() with id and width
+        rect = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+
+    def test_rectangle_create_with_id_width_and_height(self):
+        # Test Rectangle.create() with id, width, and height
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+    def test_rectangle_create_with_id_width_height_and_coordinates(self):
+        # Test Rectangle.create() with id, width, height, and coordinates
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+
+    def test_rectangle_save_to_file_none(self):
+        # Test Rectangle.save_to_file() with None
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_rectangle_save_to_file_empty_list(self):
+        # Test Rectangle.save_to_file() with an empty list
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_rectangle_save_to_file_single_rectangle(self):
+        # Test Rectangle.save_to_file() with a list containing a single Rectangle object
+        rect = Rectangle(1, 2)
+        Rectangle.save_to_file([rect])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
+
+    def test_rectangle_load_from_file_nonexistent_file(self):
+       # Test Rectangle.load_from_file() when the file doesn't exist
+       self.assertEqual(Rectangle.load_from_file(), [])
+
+    def test_rectangle_load_from_file_existing_file(self):
+        # Test Rectangle.load_from_file() when the file exists
+        with open("Rectangle.json", "w") as file:
+            file.write('[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
+        rects = Rectangle.load_from_file()
+        self.assertEqual(len(rects), 1)
+        self.assertEqual(rects[0].id, 1)
+        self.assertEqual(rects[0].width, 1)
+        self.assertEqual(rects[0].height, 2)
+        self.assertEqual(rects[0].x, 0)
+        self.assertEqual(rects[0].y, 0)
+
+    @classmethod
+    def tearDownClass(cls):
+        try:
+            os.remove("Rectangle.json")
+        except FileNotFoundError:
+            pass
 
 if __name__ == "__main__":
     unittest.main()
