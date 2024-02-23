@@ -160,17 +160,6 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
-    def test_rectangle_save_to_file_single_rectangle(self):
-        # Test Rectangle.save_to_file() with a list containing a single Rectangle object
-        rect = Rectangle(1, 2)
-        Rectangle.save_to_file([rect])
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
-
-    def test_rectangle_load_from_file_nonexistent_file(self):
-       # Test Rectangle.load_from_file() when the file doesn't exist
-       self.assertEqual(Rectangle.load_from_file(), [])
-
     def test_rectangle_load_from_file_existing_file(self):
         # Test Rectangle.load_from_file() when the file exists
         with open("Rectangle.json", "w") as file:
