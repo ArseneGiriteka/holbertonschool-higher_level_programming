@@ -6,6 +6,7 @@ import unittest
 import io
 import os
 from contextlib import redirect_stdout
+from unittest.mock import patch, MagicMock
 from models.rectangle import Rectangle
 
 
@@ -192,6 +193,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rects[0].height, 2)
         self.assertEqual(rects[0].x, 0)
         self.assertEqual(rects[0].y, 0)
+
+    @patch('builtins.open', create=True)
+    def test_rectangle_save_to_file_none(self, mock_open):
+        # Call the method with None argument
+        Rectangle.save_to_file(None)
+
+        # Check if the file was opened and written correctly
+        mock_open.assert_called_once_with('Rectangle.json', mode='w', encoding='utf-8')
+        mock_open().write.assert_called_once_with('[]')
 
     @classmethod
     def tearDownClass(cls):
