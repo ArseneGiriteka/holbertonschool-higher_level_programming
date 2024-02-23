@@ -4,6 +4,7 @@
 
 import unittest
 import io
+from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 
 
@@ -98,7 +99,7 @@ class TestRectangle(unittest.TestCase):
     def test_display_with_x_and_y(self):
         # Test display with both x and y
         rect = Rectangle(3, 4, 2, 1)
-        expected_output = "\n\n  ###\n  ###\n  ###\n  ###\n"
+        expected_output = "\n  ###\n  ###\n  ###\n  ###\n"
         with io.StringIO() as buf, redirect_stdout(buf):
             rect.display()
             self.assertEqual(buf.getvalue(), expected_output)
